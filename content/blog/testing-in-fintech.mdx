@@ -1,0 +1,30 @@
+---
+title: Testing in FinTech — why correctness isn't optional
+date: 2026-05-14
+summary: In most software a bug is an inconvenience. In a lending platform it can be a financial loss, a compliance violation, or both.
+---
+
+Software bugs are usually forgivable. A broken button, a missing tooltip, an error that
+reloads on refresh — users shrug and move on.
+
+A loan disbursement that runs twice does not shrug.
+
+I've spent my career testing FinTech platforms — loan origination, repayment scheduling,
+reconciliation, end-of-day settlement. What I've learned is that the stakes change the
+calculus for everything: which tests you write first, what "done" means, how much you trust
+a smoke test before a production push.
+
+**The cost of a missed bug is asymmetric.** In a SaaS dashboard, a missed edge case means
+a support ticket. In a lending system, it can mean a payment posted to the wrong account,
+a customer double-charged, or a regulator notified. The blast radius is real and traceable.
+
+**Your test suite should model the domain, not the UI.** I write far more API-level tests
+than UI tests for FinTech work. The UI changes every sprint; the loan lifecycle does not.
+If repayment, reconciliation, and settlement hold at the API layer, the UI is a skin on top
+of something solid.
+
+**Production is a test environment you can't roll back.** This is why I care so much about
+release gates, UAT sign-off, and RCA culture. A defect you find in UAT is a story. A defect
+you find in production is an incident.
+
+Get good at finding them first.

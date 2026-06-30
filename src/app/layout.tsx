@@ -14,9 +14,9 @@ import "@fontsource/ibm-plex-mono/500.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Suman Subedi — QA Engineer",
+  title: "Suman Subedi — QA Engineer | API & FinTech Testing",
   description:
-    "QA engineer specialising in API & backend testing and FinTech release ownership. Based in Kathmandu, Nepal.",
+    "QA engineer with 4+ years in FinTech — API & backend testing, UAT, release ownership. ISTQB CTFL certified. Based in Kathmandu, Nepal.",
 };
 
 export default function RootLayout({

@@ -1,5 +1,13 @@
 import { SectionLabel } from "./SectionLabel";
 
+const keywords = [
+  "api testing",
+  "backend testing",
+  "fintech",
+  "uat",
+  "release ownership",
+];
+
 export function Hero() {
   return (
     <section className="mx-auto max-w-5xl px-6 pb-24 pt-20 sm:pt-28">
@@ -10,12 +18,38 @@ export function Hero() {
         <br className="hidden sm:block" /> prove that it works.
       </h1>
 
+      <div className="mt-5 flex flex-wrap gap-2">
+        {keywords.map((kw) => (
+          <span
+            key={kw}
+            className="rounded-full border border-line px-3 py-0.5 font-mono text-xs text-ink-faint"
+          >
+            {kw}
+          </span>
+        ))}
+      </div>
+
       <p className="mt-6 max-w-xl font-body text-lg leading-relaxed text-ink-soft">
         QA engineer by trade — API and backend testing, FinTech release
         ownership, and the kind of bug hunting that keeps loan workflows honest.
         This is my corner of the web: built by hand, owned outright, and tested
         on every commit.
       </p>
+
+      <div className="mt-8 flex flex-wrap items-center gap-4">
+        <a
+          href="#contact"
+          className="inline-flex items-center rounded-lg bg-pass px-5 py-3 font-mono text-sm text-paper transition-opacity hover:opacity-90"
+        >
+          get in touch →
+        </a>
+        <a
+          href="#experience"
+          className="font-mono text-sm text-ink-soft transition-colors hover:text-ink"
+        >
+          see my work ↓
+        </a>
+      </div>
 
       {/* The hero's own assertion resolves to a pass, drawn on load. */}
       <div className="mt-10 inline-flex items-center gap-3 rounded-lg border border-line bg-paper-raised px-4 py-3 font-mono text-sm">

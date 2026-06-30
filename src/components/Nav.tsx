@@ -22,16 +22,23 @@ export function Nav() {
             <a className="transition-colors hover:text-ink" href="#writing">
               writing
             </a>
+            <a className="transition-colors hover:text-ink" href="#contact">
+              contact
+            </a>
           </div>
 
-          {/* Signature: the site reports its own status, tied to the CI suite. */}
-          <span className="inline-flex items-center gap-2 rounded-full border border-pass/25 bg-pass-wash px-3 py-1 font-mono text-xs text-pass">
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-pass opacity-60" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-pass" />
+          <div className="group relative">
+            <span className="inline-flex cursor-default items-center gap-2 rounded-full border border-pass/25 bg-pass-wash px-3 py-1 font-mono text-xs text-pass">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-pass opacity-60" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-pass" />
+              </span>
+              all checks passing
             </span>
-            all checks passing
-          </span>
+            <div className="pointer-events-none absolute right-0 top-full mt-2 w-56 rounded-lg border border-line bg-paper-raised px-3 py-2 font-mono text-xs text-ink-soft shadow-sm opacity-0 transition-opacity duration-150 group-hover:opacity-100">
+              automated tests run on every commit — this badge is live
+            </div>
+          </div>
         </div>
       </nav>
     </header>

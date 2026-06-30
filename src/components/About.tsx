@@ -6,6 +6,10 @@ export function About() {
       <div className="mx-auto grid max-w-5xl gap-10 px-6 py-20 md:grid-cols-[1fr_1.4fr]">
         <div>
           <SectionLabel>about</SectionLabel>
+          {/* Swap this div for <img src="/avatar.jpg" alt="Suman Subedi" /> once you have a headshot */}
+          <div className="mt-5 flex h-16 w-16 items-center justify-center rounded-full border border-pass/25 bg-pass-wash">
+            <span className="font-display text-lg font-semibold text-pass">SS</span>
+          </div>
           <h2 className="mt-4 font-display text-2xl font-semibold tracking-tight text-ink">
             The short version
           </h2>
@@ -26,7 +30,7 @@ export function About() {
             time to catch a regression is before it ships, not after.
           </p>
 
-          <dl className="grid grid-cols-2 gap-x-8 gap-y-4 border-t border-line pt-6 font-mono text-sm">
+          <dl className="grid grid-cols-1 gap-x-8 gap-y-4 border-t border-line pt-6 font-mono text-sm sm:grid-cols-2">
             <div>
               <dt className="text-ink-faint">role</dt>
               <dd className="mt-1 text-ink">QA engineer</dd>
@@ -41,7 +45,11 @@ export function About() {
             </div>
             <div>
               <dt className="text-ink-faint">status</dt>
-              <dd className="mt-1 text-pass">open to senior QA roles</dd>
+              <dd className="mt-1">
+                <a href="#contact" className="text-pass transition-opacity hover:opacity-80">
+                  open · remote-first ↓
+                </a>
+              </dd>
             </div>
           </dl>
         </div>

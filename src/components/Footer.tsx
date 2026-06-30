@@ -6,14 +6,27 @@ export function Footer() {
           <span className="text-pass">✓</span> built, owned, and tested by suman
         </p>
         <div className="flex gap-6">
-          <a className="transition-colors hover:text-ink" href="#">
+          <a
+            className="transition-colors hover:text-ink"
+            href="https://github.com/sumansubedi"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             github
           </a>
-          <a className="transition-colors hover:text-ink" href="#">
-            email
+          <a
+            className="transition-colors hover:text-ink"
+            href="https://www.linkedin.com/in/suman-subedi/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            linkedin
           </a>
-          <a className="transition-colors hover:text-ink" href="#">
-            rss
+          <a
+            className="transition-colors hover:text-ink"
+            href="mailto:suman.subedi1223@gmail.com"
+          >
+            email
           </a>
         </div>
       </div>
