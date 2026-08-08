@@ -17,17 +17,16 @@ export function About() {
 
         <div className="space-y-5 font-body text-lg leading-relaxed text-ink-soft">
           <p>
-            I&apos;ve spent nearly four years on the unglamorous, essential half
-            of building software — making sure it actually does what it claims
-            in environments where it really matters. My work lives in FinTech:
-            loan workflows, payment modules, reconciliation, and the edge cases
-            a broken disbursement creates at 2 a.m.
+            I&apos;m a QA engineer working in FinTech — loan workflows, payment
+            modules, reconciliation. Nearly four years in, and most of my job
+            is finding what&apos;s broken and reducing the risk of it reaching
+            production, on systems that move real money.
           </p>
           <p>
-            I own production releases, lead UAT cycles, and dig into API logs
-            until I understand exactly why something failed. Right now I&apos;m
-            also building out an API automation framework — because the best
-            time to catch a regression is before it ships, not after.
+            I handle production releases, run UAT cycles, and spend a good
+            chunk of my time in API logs figuring out why something broke.
+            Lately I&apos;ve been building out an automation framework so we
+            catch those issues before release, not after.
           </p>
 
           <dl className="grid grid-cols-1 gap-x-8 gap-y-4 border-t border-line pt-6 font-mono text-sm sm:grid-cols-2">
@@ -44,12 +43,12 @@ export function About() {
               <dd className="mt-1 text-ink">Kathmandu, Nepal</dd>
             </div>
             <div>
-              <dt className="text-ink-faint">status</dt>
+              {/* <dt className="text-ink-faint">status</dt>
               <dd className="mt-1">
                 <a href="#contact" className="text-pass transition-opacity hover:opacity-80">
                   open · remote-first ↓
                 </a>
-              </dd>
+              </dd> */}
             </div>
           </dl>
         </div>

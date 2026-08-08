@@ -14,8 +14,8 @@ export function Hero() {
       <SectionLabel>describe(&apos;suman&apos;)</SectionLabel>
 
       <h1 className="mt-6 max-w-3xl font-display text-4xl font-semibold leading-[1.08] tracking-tight text-ink sm:text-6xl">
-        I&apos;m Suman. I make software
-        <br className="hidden sm:block" /> prove that it works.
+        I&apos;m Suman. I reduce the risk
+        <br className="hidden sm:block" /> of software failing in production.
       </h1>
 
       <div className="mt-5 flex flex-wrap gap-2">
