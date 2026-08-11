@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getBlogPosts } from "@/lib/content";
+import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
 
 function formatDate(iso: string) {
@@ -17,7 +18,7 @@ export function Writing() {
 
   return (
     <section id="writing" className="border-t border-line">
-      <div className="mx-auto max-w-5xl px-6 py-20">
+      <Reveal className="mx-auto max-w-5xl px-6 py-20">
         <SectionLabel>writing</SectionLabel>
         <h2 className="mt-4 font-display text-2xl font-semibold tracking-tight text-ink">
           Notes &amp; longer thoughts
@@ -37,7 +38,7 @@ export function Writing() {
                   <h3 className="font-display text-xl font-medium tracking-tight text-ink transition-colors group-hover:text-pass">
                     {post.title}
                   </h3>
-                  <p className="mt-1 max-w-2xl font-body leading-relaxed text-ink-soft">
+                  <p className="mt-1 max-w-xl font-body leading-relaxed text-ink-soft">
                     {post.summary}
                   </p>
                 </div>
@@ -45,7 +46,7 @@ export function Writing() {
             </li>
           ))}
         </ul>
-      </div>
+      </Reveal>
     </section>
   );
 }
