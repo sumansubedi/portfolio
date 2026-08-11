@@ -1,6 +1,6 @@
 name: CI & Deploy
 
-# Build, test, and deploy on every push to main.
+# Build, test, and deploy on every push to dev.
 # Pull requests only run CI (no deploy).
 on:
   push:
@@ -36,11 +36,11 @@ jobs:
           path: playwright-report/
           retention-days: 14
       - name: Upload Pages artifact
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/dev'
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
       - name: Deploy to GitHub Pages
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/dev'
         id: deployment
         uses: actions/deploy-pages@v4
