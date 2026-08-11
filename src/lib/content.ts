@@ -73,3 +73,44 @@ export function getExperience(): ExperienceEntry[] {
     })
     .sort((a, b) => (a.start < b.start ? 1 : -1));
 }
+
+/* ── Projects ─────────────────────────────────────────────────────────────── */
+
+export type ProjectEntry = {
+  slug: string;
+  title: string;
+  summary: string;
+  stack: string[];
+  link: string;
+  linkLabel: string;
+  date: string;
+  status: string;
+};
+
+const PROJECTS_DIR = path.join(CONTENT_DIR, "projects");
+
+export function getProjects(): ProjectEntry[] {
+  if (!fs.existsSync(PROJECTS_DIR)) return [];
+  return fs
+    .readdirSync(PROJECTS_DIR)
+    .filter((f) => f.endsWith(".md") || f.endsWith(".mdx"))
+    .map((file) => {
+      const slug = file.replace(/\.mdx?$/, "");
+      const raw = fs.readFileSync(path.join(PROJECTS_DIR, file), "utf8");
+      const { data } = matter(raw);
+      return {
+        slug,
+        title: String(data.title ?? slug),
+        summary: String(data.summary ?? "").trim(),
+        stack: String(data.stack ?? "")
+          .split(",")
+          .map((s) => s.trim())
+          .filter(Boolean),
+        link: String(data.link ?? ""),
+        linkLabel: String(data.linkLabel ?? "view ↗"),
+        date: String(data.date ?? ""),
+        status: String(data.status ?? "shipped"),
+      };
+    })
+    .sort((a, b) => (a.date < b.date ? 1 : -1));
+}

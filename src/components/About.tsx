@@ -1,9 +1,10 @@
+import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
 
 export function About() {
   return (
     <section id="about" className="border-t border-line">
-      <div className="mx-auto grid max-w-5xl gap-10 px-6 py-20 md:grid-cols-[1fr_1.4fr]">
+      <Reveal className="mx-auto grid max-w-5xl gap-10 px-6 py-20 md:grid-cols-[1fr_1.4fr]">
         <div>
           <SectionLabel>about</SectionLabel>
           {/* Swap this div for <img src="/avatar.jpg" alt="Suman Subedi" /> once you have a headshot */}
@@ -15,12 +16,14 @@ export function About() {
           </h2>
         </div>
 
-        <div className="space-y-5 font-body text-lg leading-relaxed text-ink-soft">
+        <div className="max-w-xl space-y-5 font-body text-lg leading-loose text-ink-soft">
           <p>
-            I&apos;m a QA engineer working in FinTech — loan workflows, payment
-            modules, reconciliation. Nearly four years in, and most of my job
-            is finding what&apos;s broken and reducing the risk of it reaching
-            production, on systems that move real money.
+            I&apos;m a QA engineer with nearly four years in the field — API
+            testing, backend validation, release ownership, the kind of work
+            that finds what&apos;s broken before it reaches production. Most
+            of that time has been in FinTech — loan workflows, payment
+            modules, reconciliation — where a missed edge case means real
+            money, not just a bad review.
           </p>
           <p>
             I handle production releases, run UAT cycles, and spend a good
@@ -36,7 +39,7 @@ export function About() {
             </div>
             <div>
               <dt className="text-ink-faint">focus</dt>
-              <dd className="mt-1 text-ink">API & backend testing, FinTech</dd>
+              <dd className="mt-1 text-ink">API & backend testing</dd>
             </div>
             <div>
               <dt className="text-ink-faint">based</dt>
@@ -52,7 +55,7 @@ export function About() {
             </div>
           </dl>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

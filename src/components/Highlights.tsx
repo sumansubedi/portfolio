@@ -1,3 +1,4 @@
+import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
 
 const stats = [
@@ -39,17 +40,27 @@ const skills = [
 export function Highlights() {
   return (
     <section id="skills" className="border-t border-line bg-paper-raised">
-      <div className="mx-auto max-w-5xl px-6 py-20">
+      <Reveal className="mx-auto max-w-5xl px-6 py-20">
         <SectionLabel>skills.verified.ts</SectionLabel>
         <h2 className="mt-4 font-display text-2xl font-semibold tracking-tight text-ink">
           Four years in the field.
         </h2>
 
         <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
-          {stats.map(({ number, label }) => (
-            <div key={label} className="rounded-lg border border-line bg-paper p-5">
-              <p className="font-display text-3xl font-semibold text-pass">{number}</p>
+          {stats.map(({ number, label }, i) => (
+            <div
+              key={label}
+              className="hoverable relative rounded-lg border border-line bg-paper p-5"
+            >
+              <p className="font-mono text-[10px] text-ink-faint">
+                ch.{String(i + 1).padStart(2, "0")}
+              </p>
+              <p className="mt-2 font-display text-3xl font-semibold text-pass">{number}</p>
               <p className="mt-1 font-mono text-xs text-ink-faint">{label}</p>
+              <span
+                aria-hidden="true"
+                className="absolute right-2 top-2 h-1.5 w-1.5 rounded-full bg-pass/50"
+              />
             </div>
           ))}
         </div>
@@ -65,7 +76,7 @@ export function Highlights() {
                 {items.map((skill) => (
                   <span
                     key={skill}
-                    className="inline-flex rounded border border-line bg-paper px-2.5 py-1 font-mono text-xs text-ink"
+                    className="hoverable inline-flex rounded border border-line bg-paper px-2.5 py-1 font-mono text-xs text-ink"
                   >
                     {skill}
                   </span>
@@ -79,7 +90,7 @@ export function Highlights() {
           <span className="text-pass">✓</span>{" "}
           all skills verified through production work, not just tutorials
         </p>
-      </div>
+      </Reveal>
     </section>
   );
 }

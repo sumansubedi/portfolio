@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Reveal } from "./Reveal";
 import { SectionLabel } from "./SectionLabel";
 
 type Status = "pending" | "running" | "pass";
@@ -49,7 +50,7 @@ export function TestRunner() {
 
   return (
     <section className="border-t border-line bg-paper-raised">
-      <div className="mx-auto max-w-5xl px-6 py-20">
+      <Reveal className="mx-auto max-w-5xl px-6 py-20">
         <SectionLabel>the_craft.test.ts</SectionLabel>
         <h2 className="mt-4 max-w-xl font-display text-2xl font-semibold tracking-tight text-ink">
           This portfolio tests itself. Run the suite.
@@ -65,7 +66,7 @@ export function TestRunner() {
               type="button"
               onClick={run}
               disabled={phase === "running"}
-              className="rounded-md bg-ink px-3 py-1.5 font-mono text-xs text-paper transition-opacity hover:opacity-90 disabled:opacity-50"
+              className="btn-secondary rounded-md px-3 py-1.5 font-mono text-xs"
             >
               {phase === "running" ? "running…" : "▸ run tests"}
             </button>
@@ -110,7 +111,7 @@ export function TestRunner() {
             )}
           </div>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }
